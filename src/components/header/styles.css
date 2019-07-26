@@ -1,0 +1,12 @@
+.nav-bar {
+  background: #d60f3d;
+  color: #fff;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  margin: 0 5px;
+}
