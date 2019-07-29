@@ -1,17 +1,15 @@
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100vh;
 }
 
-.content > * {
-  border: 1px solid black;
+.main {
+  height: calc(100vh - 54px);
 }
 
-.main {
-  height: 90vh;
-}
 .footer {
   bottom: 0;
+  z-index: 9999;
+  background-color: aqua;
 }
