@@ -28,7 +28,7 @@
   max-width: 216px;
   border-radius: 15px;
   border: 0;
-  background: #EF5350;
+  background: #ef5350;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -55,12 +55,12 @@
 }
 
 .list-item {
-  border: 3px solid #EF5350;
+  border: 3px solid #ef5350;
   border-radius: 15px;
   text-align: center;
   margin: 5px;
   font-weight: bold;
-  background-color: #EF5350;
+  background-color: #ef5350;
 }
 
 .list-item:hover {
@@ -71,6 +71,10 @@
 .list-item a {
   text-decoration: none;
   color: #fff;
+}
+.list-item img {
+  height: 96px;
+  width: 96px;
 }
 
 .item-name {

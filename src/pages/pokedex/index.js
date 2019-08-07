@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import api from '../../services/api/pokemon';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import api from "../../services/api/pokemon";
+import { Link } from "react-router-dom";
 
-import './styles.css';
+import "./styles.css";
 
 export default class Pokedex extends Component {
   state = {
     pokemons: [],
     generation: 1,
-    pokemonImgUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
+    pokemonImgUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
   };
 
   componentDidMount() {
@@ -23,7 +23,7 @@ export default class Pokedex extends Component {
 
   orderByPokemonId = array => {
     const sortAsc = (a, b) =>
-      parseInt(a.url.split('/').slice(6)) - parseInt(b.url.split('/').slice(6));
+      parseInt(a.url.split("/").slice(6)) - parseInt(b.url.split("/").slice(6));
     return array.sort(sortAsc);
   };
 
@@ -50,10 +50,10 @@ export default class Pokedex extends Component {
   render() {
     const { pokemons, generation, pokemonImgUrl } = this.state;
     return (
-      <div className='pokedex-content'>
-        <div className='pokedex-header'>
-          <h1>Pokedex</h1>{' '}
-          <div className='actions'>
+      <div className="pokedex-content">
+        <div className="pokedex-header">
+          <h1>Pokedex</h1>{" "}
+          <div className="actions">
             <button onClick={this.prevGen} disabled={generation === 1}>
               Prev.Gen.
             </button>
@@ -62,25 +62,27 @@ export default class Pokedex extends Component {
             </button>
           </div>
         </div>
-        <div className='list'>
+        <div className="list">
           {pokemons.map(pokemon => (
-            <div key={pokemon.name} className='list-item'>
+            <div key={pokemon.name} className="list-item">
               <Link
                 to={`/pokemon/${pokemon.url
-                  .split('/')
+                  .split("/")
                   .slice(6)
-                  .join('')}`}>
-                <span> #{pokemon.url.split('/').slice(6)} </span>
-                <p className='item-name'>{pokemon.name.split('-').join(' ')}</p>
+                  .join("")}`}>
+                <span> #{pokemon.url.split("/").slice(6)} </span>
+                <p className="item-name">{pokemon.name.split("-").join(" ")}</p>
                 <img
+                  loading="lazy"
                   src={
                     pokemonImgUrl +
                     pokemon.url
-                      .split('/')
+                      .split("/")
                       .slice(6)
-                      .join('') +
-                    '.png'
+                      .join("") +
+                    ".png"
                   }
+                  alt={pokemon.name.split("-").join(" ")}
                 />
               </Link>
             </div>
